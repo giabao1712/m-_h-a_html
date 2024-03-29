@@ -1,0 +1,189 @@
+<html><head><title>MÃ HÓA HTML</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    </head>
+    <body bgcolor=#A8D4FF>
+    <center><h2>Mã hóa trang HTML</h2></center><br><SCRIPT language=JavaScript>
+    <!-- Begin
+    day = new Date();
+    miVisit = day.getTime();
+    function clock() {
+    dayTwo = new Date();
+    hrNow = dayTwo.getHours();
+    mnNow = dayTwo.getMinutes();	
+    scNow = dayTwo.getSeconds();
+    miNow = dayTwo.getTime();
+    if (hrNow == 0) {
+    hour = 12;
+    ap = " AM";
+    } else if(hrNow <= 11) {
+    ap = " AM";
+    hour = hrNow;
+    } else if(hrNow == 12) {
+    ap = " PM";
+    hour = 12;
+    } else if (hrNow >= 13) {
+    hour = (hrNow - 12);
+    ap = " PM";
+    }
+    if (hrNow >= 13) {
+    hour = hrNow - 12;
+    }
+    if (mnNow <= 9) {
+    min = "0" + mnNow;
+    }
+    else (min = mnNow)
+    if (scNow <= 9) {
+    secs = "0" + scNow;
+    } else {
+    secs = scNow;
+    }
+    time = hour + ":" + min + ":" + secs + ap;
+    document.form.button.value = time;
+    self.status = time;
+    setTimeout('clock()', 1000);
+    }
+    function timeInfo() {
+    milliSince = miNow;
+    milliNow = miNow - miVisit;
+    secsVisit = Math.round(milliNow / 1000);
+    minsVisit = Math.round((milliNow / 1000) / 60);
+    alert("There have been " + milliSince + " milliseconds since midnight, January 1, 1970.  "
+    + "You have spent " + milliNow + " of those milliseconds on this page.  "
+    + ".... About " + minsVisit + " minutes, and "
+    + secsVisit + " seconds.");
+    }
+    document.write("<center><form name=\"form\">"
+    + "<input type=button value=\"Click for info!\""
+    + " name=button onClick=\"timeInfo()\"></form></center>");
+    onError = null;
+    clock();
+    // End -->
+    </SCRIPT>
+    <SCRIPT language=JavaScript>
+    var isnDays=new Array(" Chủ nhật, "," Thứ hai, "," Thứ ba, "," Thứ tư, "," Thứ năm, "," Thứ sáu, "," Thứ bảy, ");
+    var isnMonths=new Array("1","2","3","4","5","6","7","8","9","10","11","12");
+    today=new Date();
+    var Year=today.getYear();
+    if ((navigator.appName == "Microsoft Internet Explorer") && (Year < 2000))
+    Year="19" + Year;
+    if (navigator.appName == "Netscape")
+    Year=1900 + Year;
+    </SCRIPT></font></b><font color="#000000"><SCRIPT language=JavaScript>                                                                                                                                 
+    document.write('<center><P><B><font face="Times New Roman" size="2"color="#ffff00">'+isnDays[today.getDay()]+today.getDate()+' tháng '+isnMonths[today.getMonth()]+' n&#259;m '                                                                                                                                 
+    +Year+'</B></P></center></font>');                                                                                                                                 
+    </SCRIPT></font></SPAN></center>
+    <SCRIPT language=JavaScript>
+    <!--
+    var i=0;
+    var ie=(document.all)?1:0;
+    var ns=(document.layers)?1:0;
+    
+    function initStyleElements()
+    {
+    var c = document.pad;
+    if (ie)
+    {
+    c.compileIt.style.backgroundColor="#C0C0A8";
+    c.compileIt.style.cursor="hand";
+    c.select.style.backgroundColor="#C0C0A8";
+    c.select.style.cursor="hand";
+    c.view.style.backgroundColor="#C0C0A8";
+    c.view.style.cursor="hand";
+    c.retur.style.backgroundColor="#C0C0A8";
+    c.retur.style.cursor="hand";
+    c.clear.style.backgroundColor="#C0C0A8";
+    c.clear.style.cursor="hand";
+    }
+    else return;
+    }
+    function LightOn(what)
+    {
+    if (ie) what.style.backgroundColor = '#E0E0D0';
+    else return;
+    }
+    
+    function FocusOn(what)
+    {
+    if (ie) what.style.backgroundColor = '#EBEBEB';
+    else return;
+    }
+    
+    function LightOut(what)
+    {
+    if (ie) what.style.backgroundColor = '#C0C0A8';
+    else return;
+    }
+    
+    function FocusOff(what)
+    {
+    if (ie) what.style.backgroundColor = '#DDDDDD';
+    else return;
+    }
+    function generate()
+    {
+    code = document.pad.text.value;
+    if (code)
+    {
+    document.pad.text.value='Đang Mã Hoá Code...Vui Lòng Chờ Chút...!';
+    setTimeout("compile()",1000);
+    }
+    else alert('CHX THẤY DỮ LIỆU')
+    }
+    
+    function compile()
+    {
+    document.pad.text.value='';
+    compilation=escape(code);
+    document.pad.text.value="<script>\n<!--\ndocument.write(unescape(\""+compilation+"\"));\n//-->\n<\/script>";
+    i++;
+    if (i=1) alert("Trang Đã Được Mã Hoá 1 Lần!");
+    else alert("Trang Đã Được Mã Hoá "+i+" Lần!");
+    }
+    
+    function selectCode()
+    {
+    if(document.pad.text.value.length>0)
+    {
+    document.pad.text.focus();
+    document.pad.text.select();
+    }
+    else alert('Ồ!... Chẳng Có Gì Để Chọn Cả!')
+    }
+    
+    function preview()
+    {
+        if(document.pad.text.value.length>0)
+        {
+            var pr=window.open("","Preview","scrollbars=1,menubar= 1,status=1,width=800,height=400,left=50,top=50");
+            pr.document.write(document.pad.text.value);
+        }
+        else 
+            alert('Có Gì Đâu Mà Đòi Xem!');
+    }
+    
+    function uncompile()
+    {
+    if (document.pad.text.value.length>0)
+    {
+    source=unescape(document.pad.text.value);
+    document.pad.text.value=""+source+"";
+    }
+    else alert('Bạn Phải Mã Hoá Rồi Mới Giải Mã Chứ...!')
+    }
+    </SCRIPT>
+    
+    <b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Dán code:</b><Br>
+    
+    <FORM name="pad" method="post" align="center" width="810" height="210">
+        <CENTER><TEXTAREA class="textarea" name="text" style="width:800px; height:200px" cellpadding=5></TEXTAREA>
+        <BR>
+        <INPUT onmouseover="LightOn(this)" onclick="generate()" onmouseout="LightOut(this)" type="button" value="Mã Hoá" name="compileIt" class="button">
+        <INPUT onmouseover="LightOn(this)" onclick="selectCode()" onmouseout="LightOut(this)" type="button" value="Chọn Tất Cả" name="select" class="button">
+        <INPUT onmouseover="LightOn(this)" onclick="uncompile()" onmouseout="LightOut(this)" type="button" value="Giải Mã" name="retur" class="button">
+    
+        <INPUT onmouseover="LightOn(this)" onmouseout="LightOut(this)" type="reset" value="Làm Lại" name="clear" class="button"></CENTER>
+    </FORM>
+    <P>&nbsp;</P><P>&nbsp;</P><center><script language="javascript" type="text/javascript" src="http://vanngai.zxq.net/bqngai.js"></script></center>
+    </body>
+    </html>	
+    
